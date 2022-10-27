@@ -22,9 +22,10 @@ class ContatoController extends Controller
             'nome'=>'required',
             'telefone'=>'required',
             'email'=>'email',
-            'motivo_contato'=>'required',
+            'motivo_contatos_id'=>'required',
             'mensagem'=>'required|max:200',
         ]);
+
 
         /*Capturando informações do formulário atraves do método request
 
@@ -47,6 +48,8 @@ class ContatoController extends Controller
 
             $contato->fill($request->all());
             $contato->save();
+            return redirect()->route('site.index');
+            
         }
     }
 }
