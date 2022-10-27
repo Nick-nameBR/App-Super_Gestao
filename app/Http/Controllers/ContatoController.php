@@ -25,7 +25,9 @@ class ContatoController extends Controller
             'motivo_contatos_id'=>'required',
             'mensagem'=>'required|max:200',
         ],[
-            
+            'required' =>'O campo precisa ser preenhcido',
+            'email' => 'Preencha com um email válido',
+            'max' => 'Foi atingido o máximo de caractére'
         ]);
 
 
