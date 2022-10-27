@@ -24,6 +24,8 @@ class ContatoController extends Controller
             'email'=>'email',
             'motivo_contatos_id'=>'required',
             'mensagem'=>'required|max:200',
+        ],[
+            
         ]);
 
 
