@@ -20,7 +20,7 @@ Route::get('/sobre-nos', [\App\Http\Controllers\SobreNosController::class,'sobre
 Route::get('/contato', [\App\Http\Controllers\ContatoController::class,'contato'])->name('site.contato');
 Route::post('/contato', [\App\Http\Controllers\ContatoController::class,'salvar'])->name('site.contato');
 
-Route::get('/login', [\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
+Route::get('/login/{erro?}', [\App\Http\Controllers\LoginController::class,'index'])->name('site.login');
 Route::post('/login', [\App\Http\Controllers\LoginController::class,'autenticar'])->name('site.login');
 
 Route::prefix('/app')->middleware('autenticacao')->group(function() {
