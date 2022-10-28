@@ -60,7 +60,8 @@ class LoginController extends Controller
 
     //FUNÇÃO DE LOGOUT
     public function sair(){
-        echo 'Sair';
-        //return view('app.sair');
+        session_destroy();
+
+        return redirect()->route('site.login');
     }
 }
