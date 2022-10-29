@@ -26,12 +26,23 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class,'autenticar'
 Route::prefix('/app')->middleware('autenticacao')->group(function() {
     Route::get('/home', [\App\Http\Controllers\HomeController::class,'index'])->name('app.home');
     Route::get('/sair', [\App\Http\Controllers\LoginController::class,'sair'])->name('app.sair');
+
+    //Rotas Cliente
     Route::get('/cliente', [\App\Http\Controllers\ClienteController::class,'index'])->name('app.cliente');
+
+
+    //Rotas Fornecedor
     Route::get('/fornecedor', [\App\Http\Controllers\FornecedorController::class,'index'])->name('app.fornecedor');
+    Route::post('/fornecedor/listar', [\App\Http\Controllers\FornecedorController::class,'listar'])->name('app.fornecedores.listar');
+    Route::get('/fornecedor/adicionar', [\App\Http\Controllers\FornecedorController::class,'adicionar'])->name('app.fornecedores.adicionar');
+    Route::post('/fornecedor/adicionar', [\App\Http\Controllers\FornecedorController::class,'adicionar'])->name('app.fornecedores.adicionar');
+
+
+    //Rotas Produto
     Route::get('/produto', [\App\Http\Controllers\ProdutoController::class,'index'])->name('app.produto');
 });
 
-Route::get('/teste/{p1}/{p2}', [\App\Http\Controllers\TesteController::class,'teste'])->name('site.teste');
+//Route::get('/teste/{p1}/{p2}', [\App\Http\Controllers\TesteController::class,'teste'])->name('site.teste');
 
 Route::fallback(function() {
     echo 'A rota acessada não existe. <a href="'.route('site.index').'">clique aqui</a> para ir para página inicial';
