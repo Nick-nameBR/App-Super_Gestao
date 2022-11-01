@@ -29,13 +29,3 @@
     <br>
     <button type="submit" onclick="notificacao()" class="{{ $classe }}">ENVIAR</button>
 </form>
-
-
-{{--@if($errors->any())
-    <span style="background: red; color:white;">
-        @foreach($errors->all() as $erro)
-           {{$erro}}
-        @endforeach
-    </span>
-@endif--}}
-
